@@ -1,0 +1,70 @@
+{
+  "input_schema": {
+    "columnar_schema": [
+      {
+        "name": "2AMto7AM_7AMto2AM",
+        "type": "category"
+      },
+      {
+        "name": "direction",
+        "type": "float64"
+      },
+      {
+        "name": "dropoff_latitude",
+        "type": "float64"
+      },
+      {
+        "name": "dropoff_longitude",
+        "type": "float64"
+      },
+      {
+        "name": "haversine_distance",
+        "type": "float64"
+      },
+      {
+        "name": "holiday",
+        "type": "category"
+      },
+      {
+        "name": "minute_of_the_day",
+        "type": "int64"
+      },
+      {
+        "name": "month",
+        "type": "int64"
+      },
+      {
+        "name": "passenger_count",
+        "type": "category"
+      },
+      {
+        "name": "pickup_latitude",
+        "type": "float64"
+      },
+      {
+        "name": "pickup_longitude",
+        "type": "float64"
+      },
+      {
+        "name": "vendor_id",
+        "type": "category"
+      },
+      {
+        "name": "week",
+        "type": "int64"
+      },
+      {
+        "name": "weekday",
+        "type": "int64"
+      }
+    ]
+  },
+  "output_schema": {
+    "columnar_schema": [
+      {
+        "name": "trip_duration",
+        "type": "int64"
+      }
+    ]
+  }
+}

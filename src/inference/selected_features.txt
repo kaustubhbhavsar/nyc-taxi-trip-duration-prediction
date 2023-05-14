@@ -1,0 +1,2 @@
+h2amto7am_7amto2am	direction	dropoff_latitude	dropoff_longitude	haversine_distance	holiday	minute_of_the_day	month	passenger_count	pickup_latitude	pickup_longitude	vendor_id	week	weekday
+1	268.9112490930019	40.772221877329024	-73.97644042968751	60.14495653194011	0	730	5	3	40.78470081841747	-73.26232910156251	2	19	5
