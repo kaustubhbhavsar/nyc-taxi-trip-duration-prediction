@@ -90,7 +90,7 @@ try:
     print_fancy_header_center('\n🔧 Prominent Features Drift')
     st.dataframe(results_df_rest, use_container_width=True)
 
-    st.write("NOTE: If the drift value is zero, it is not exactly zero but rather a very small value.", unsafe_allow_html=True)
+    st.write("NOTE: If the p-value is zero, it is not exactly zero but rather a very small value.", unsafe_allow_html=True)
 
     # show balloons as success
     st.balloons()
