@@ -13,5 +13,5 @@ seaborn==0.12.2
 scikit-learn==1.0.2
 streamlit==1.22.0
 folium==0.14.0
-streamlit==0.11.1
+streamlit-folium==0.11.1
 alibi-detect==0.11.2
