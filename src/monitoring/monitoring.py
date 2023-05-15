@@ -41,7 +41,7 @@ try:
     # getting data
     st.write("<p style='text-align: center;'>(getting data)</p>", unsafe_allow_html=True)
     st.write("<p style='text-align: center;'>(wait a little)</p>", unsafe_allow_html=True)
-    st.write("<p style='text-align: center;'>(this may take few seconds)</p>", unsafe_allow_html=True)
+    st.write("<p style='text-align: center;'>(this may take a few seconds)</p>", unsafe_allow_html=True)
     test_df = monitoring_utils.get_df(
         feature_store=fs,
         feature_view_name='combined_features',
