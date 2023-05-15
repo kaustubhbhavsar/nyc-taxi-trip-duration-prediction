@@ -1,5 +1,7 @@
 # script used for predicting via the hopsworks deployment
 # alternatively, for experimental or personal purposes, we can get model directly from registry or local disk
+# this file is updated at hopsworks, however, we are right now working with models at registry/locally saved
+
 import joblib
 import os
 

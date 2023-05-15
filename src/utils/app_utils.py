@@ -3,13 +3,15 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 
+from config import config
+import hopsworks
 import joblib
+from pathlib import Path
 import pandas as pd
 import shutil
-from typing import Any
-import hopsworks
 from src.features import engineered_features
 from src.utils import data_utils
+from typing import Any
 
 
 def process_input(
@@ -129,8 +131,7 @@ def get_model(
     Returns:
         The trained model object.
     """
-    model_dir_exact = r'E:\NYC Taxi Trip Duration Prediction\model\1\final_xgb_model.bin'
-    if os.path.exists(model_dir_exact):
+    if os.path.exists(Path(config.MODEL_DIR, "1", "final_xgb_model.bin")):
         pass
     else:
         # get model registry
@@ -139,8 +140,7 @@ def get_model(
         model = mr.get_model(model_name, version)
         model_dir = model.download()
         # move the downloaded model directory to the model directory
-        model_dir_parent = r'E:\NYC Taxi Trip Duration Prediction\model'
-        shutil.move(model_dir, model_dir_parent)
+        shutil.move(model_dir, Path(config.MODEL_DIR))
     # load and return model
-    model = joblib.load(model_dir_exact)
+    model = joblib.load(Path(config.MODEL_DIR, "1" ,"final_xgb_model.bin"))
     return model

@@ -2,6 +2,8 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
+from config import config
+from pathlib import Path
 import pandas as pd
 from src.utils import data_utils, hopsworks_utils
 from hsfs.feature_view import FeatureView
@@ -65,10 +67,10 @@ def run(
     test_df = get_training_data(feature_view=feature_view, training_dataset_version=2)
 
     # write train and test datasets to file
-    if not os.path.exists(r"E:\NYC Taxi Trip Duration Prediction\data\training_datasets"):
-        os.makedirs(r"E:\NYC Taxi Trip Duration Prediction\data\training_datasets") # make dir if it doesn't exist
-    data_utils.write_data(train_df, r"E:\NYC Taxi Trip Duration Prediction\data\training_datasets\train.csv")
-    data_utils.write_data(test_df, r"E:\NYC Taxi Trip Duration Prediction\data\training_datasets\test.csv")
+    if not os.path.exists(Path(config.DATA_DIR, "training_datasets")):
+        os.makedirs(Path(config.DATA_DIR, "training_datasets")) # make dir if it doesn't exist
+    data_utils.write_data(train_df, Path(config.DATA_DIR, "training_datasets", "train.csv"))
+    data_utils.write_data(test_df, Path(config.DATA_DIR, "training_datasets", "test.csv"))
 
 
 # run the file

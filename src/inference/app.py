@@ -2,13 +2,15 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-import pandas as pd
-import json
-import time
+from config import config
 import folium
+import json
+from pathlib import Path
+import pandas as pd
+from src.utils import app_utils, hopsworks_utils
 import streamlit as st
 from streamlit_folium import st_folium
-from src.utils import app_utils, hopsworks_utils
+import time
 
 
 #This script is a Streamlit application that allows users to predict the duration of a taxi trip in 
@@ -24,7 +26,7 @@ def print_fancy_header_center(text, font_size=24, color="#ff5f27"):
 
 
 # display title
-st.title('🚖NYC Taxi Trip Duration🚖')
+st.markdown("<h1 style='text-align: center; color: black;'>🚖NYC Taxi Trip Duration🚖</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black;'>🚖PREDICTION🚖</h1>", unsafe_allow_html=True)
 st.write(36 * "-")
 
@@ -60,7 +62,9 @@ with st.form(key="user_inputs"):
     folium.TileLayer('cartodbpositron').add_to(my_map)
     folium.TileLayer('cartodbdark_matter').add_to(my_map)
     folium.LayerControl().add_to(my_map)
-    coordinates = json.load(open("temp_coordinates.json"))
+    temp_coordinates_file = Path(config.CONFIG_DIR, "temp_coordinates.json") # loading coordinates
+    with open(temp_coordinates_file) as f:
+        coordinates = json.load(f)
     res_map = st_folium(my_map, height=300, width=600)
 
     try:
@@ -95,7 +99,8 @@ with st.form(key="user_inputs"):
             else:
                 st.write(f"Latitude: {dropoff_latitude}")
                 st.write(f"Longitude: {dropoff_longitude}")
-        json.dump(coordinates, open("temp_coordinates.json", "w" )) 
+        with open(temp_coordinates_file, "w") as f: # updating coordinates
+            json.dump(coordinates, f)
     except Exception as err:
         print(err)
         pass
@@ -117,14 +122,14 @@ with st.form(key="user_inputs"):
             dropoff_longitude,
             pickup_datetime
         )
-        df_predictor.to_csv(r'E:\NYC Taxi Trip Duration Prediction\src\inference\selected_features.txt', sep='\t', index=False)
+        df_predictor.to_csv(Path(config.CONFIG_DIR, "selected_features.txt"), sep='\t', index=False)
 
 
 try:  
     # feature engineering steps
     print_fancy_header_center('\n🔧 Feature Engineering')
     # load DataFrame from text file
-    df_loaded = pd.read_csv(r'E:\NYC Taxi Trip Duration Prediction\src\inference\selected_features.txt', sep='\t')
+    df_loaded = pd.read_csv(Path(config.CONFIG_DIR, "selected_features.txt"), sep='\t')
     st.dataframe(df_loaded) # print all obtained features df
     
     # prediction steps
@@ -133,7 +138,7 @@ try:
         st.write("<p style='text-align: center;'>(wait a little)</p>", unsafe_allow_html=True)
 
         # load DataFrame from text file
-        df_loaded = pd.read_csv(r'E:\NYC Taxi Trip Duration Prediction\src\inference\selected_features.txt', sep='\t')
+        df_loaded = pd.read_csv(Path(config.CONFIG_DIR, "selected_features.txt"), sep='\t')
         
         # login to hopsworks pass the project as arguement
         project = hopsworks_utils.login_to_hopsworks(project="nyc_taxi_trip_duration")
@@ -145,9 +150,9 @@ try:
         
         # make predictions
         prediction = model.predict(df_loaded) # in seconds
-        minutes = prediction // 60 # convert seconds to minutes
-        remaining_seconds = prediction % 60 # remaining seconds
-        st.markdown("<h3 style='text-align: center;'>Prediction: {}minutes{}seconds</h3>".format(minutes, remaining_seconds), unsafe_allow_html=True)
+        minutes = int(prediction // 60) # convert seconds to minutes
+        remaining_seconds = int(prediction % 60 // 1) # remaining seconds with no fractional part
+        st.markdown("<h3 style='text-align: center;'>Prediction: [{}]minutes[{}]seconds</h3>".format(minutes, remaining_seconds), unsafe_allow_html=True)
         df_prediction = pd.DataFrame.from_dict({ # create DataFrame from a prediction
             'prediction': prediction
         })

@@ -2,7 +2,8 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-
+from config import config
+from pathlib import Path
 import pandas as pd
 from src.features import engineered_features 
 from src.utils import data_utils, hopsworks_utils
@@ -177,7 +178,7 @@ def run(
         raise Exception(f"Error connecting to Feature Store in project {project}: {e}")
     
     # read in your data from csv file
-    df_processed = data_utils.read_data(r"E:\NYC Taxi Trip Duration Prediction\data\processed.csv")
+    df_processed = data_utils.read_data(Path(config.DATA_DIR, "processed.csv"))
     # call the engineer_features function on your DataFrame
     df_engineered = engineer_features(df_processed.copy())
 
