@@ -2,7 +2,7 @@
 data/
 
 # Packaging
-#.conda/ # adding this package to github to see if streamlit utilizes it and avoids installation by itself
+.conda/ 
 
 # Misc
 .pytest_cache/
