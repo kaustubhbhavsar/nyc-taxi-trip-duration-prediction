@@ -68,7 +68,7 @@ The additional libraries utilized, along with the precise versions of each libra
 <!-- Final Notes -->
 ## Final Notes
 
-Ensure that all the necessary dependencies and libraries are installed. Refer to the "Requirements" section in the documentation for a complete list of required libraries and their versions.
+Ensure that all the necessary dependencies and libraries are installed. Refer to the <a href="requirements.txt">requirements.txt</a> file for a complete list of required libraries and their versions.
 
 Please note that certain files within this project necessitate the usage of Hopsworks. Additionally, an API key for Weights & Biases is required. To proceed with experimentation on a local setup, kindly create an API key and provide it either as a string or through files.
 
@@ -77,7 +77,7 @@ This project includes two Streamlit applications:
 *  <a href="src/inference/app.py">app.py</a>: This application is designed for making predictions.
 *  <a href="src/monitoring/monitoring.py">monitoring.py</a>: This application is intended for monitoring purposes.
 
-Both app.py and monitoring.py may experience latency due to various factors. The performance of the applications, particularly when accessing datasets from Hopsworks, can be influenced by the size of the datasets. To optimize the performance consider sampling a subset of the data or aggregating it to a manageable size while still maintaining its representative nature.
+The files mentioned above may experience latency, typically up to a minute or two, particularly when accessing datasets from Hopsworks. To optimize the performance consider sampling a subset of the data or aggregating it to a manageable size while still maintaining its representative nature.
 
 The codebase has been meticulously documented, incorporating comprehensive docstrings and comments. Please review these annotations, as they provide valuable insights into the functionality and operation of the code. 
 
