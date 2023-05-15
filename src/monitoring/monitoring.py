@@ -32,7 +32,7 @@ try:
     st.write("<p style='text-align: center;'>(connecting to feature store)</p>", unsafe_allow_html=True)
     try:
        # login to hopsworks pass the project as arguement
-        project = hopsworks_utils.login_to_hopsworks(project='nyc_taxi_trip_duration')
+        project = hopsworks_utils.login_to_hopsworks(project='nyc_taxi_trip_duration', streamlit_api_key=st.secrets["HOPSWORKS_API_KEY"])
         # connect to feature store
         fs = project.get_feature_store()
     except Exception as e:
