@@ -2,7 +2,10 @@
 
 <br />
 <div align="center">
-  <h3 align="center">NYC Taxi Trip Duration</h3>
+  <h3 align="center">FastRide: NYC Taxi Trip Duration Prediction</h3>
+  <p align="center">
+      <b>Weights&amp;Biases</b> Experiment Tracking | <b>Hopsworks</b> Feature Store | <b>Alibi-Detect</b> Monitoring | <b>Streamlit</b> Web-App 
+  </p>
 </div>
 
 <!-- ABOUT PROJECT -->
@@ -26,8 +29,8 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 
 This project includes two Streamlit applications:
 
-*  <a href="src/inference/app.py">app.py</a>: This application is designed for making predictions.
-*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: This application is intended for monitoring purposes.
+*  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration.
+*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights.
 
 You can view two recorded screen GIFs demonstrating the functionality of the Streamlit apps below. The first GIF demonstrates the prediction app, highlighting the map-based selection, prediction results, and data storage to the feature store. The second GIF showcases the user interface and features of the monitoring app, including real-time drift calculation and insights. Users can monitor and analyze the performance of the prediction model and make informed decisions based on the displayed information.
 
@@ -71,7 +74,7 @@ PREDICTION             |  MONITORING
 *   Web App: Streamlit, Folium
 *   Other Prominent Libraries: Scikit-Learn, Xgboost, Pandas, Numpy, Matplotlib, Seaborn, Yellowbrick
 
-The additional libraries utilized, along with the precise versions of each library used, are specified in the requirements.txt file.
+The additional libraries utilized, along with the precise versions of each library used, are specified in the <a href="requirements.txt">requirements.txt</a> file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
