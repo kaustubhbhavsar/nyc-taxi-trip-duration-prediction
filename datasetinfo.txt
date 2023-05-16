@@ -1,0 +1,18 @@
+The dataset utilized for this project is obtained by downloading it from the NYC Taxi Trip Duration 
+competition on Kaggle.
+
+Throughout the entire project, solely the training dataset is utilized.
+
+The training dataset comprises 1458644 records, encompassing data from the period between January 
+and June in the year 2016.
+
+The evaluation of the model is carried out through Cross-Validation, employing TimeSeriesSplits 
+as well. In order to accomplish this, data from January to May is utilized for the Cross-Validation 
+process, while the data from June is reserved solely for testing the final model.
+
+For a comprehensive explanation of all the original features, please refer to 
+the './notebooks/data_analysis_and_processing.ipynb' file.
+
+NOTE:
+To maintain clarity, the data utilized in production incorporates current data timestamps, 
+which may not be ideal, but it serves as a simple and valuable approach for experimentation purposes.

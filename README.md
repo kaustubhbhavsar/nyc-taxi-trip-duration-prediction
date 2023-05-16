@@ -27,6 +27,16 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 <!-- PROJECT SUMMARY -->
 ## Summary
 
+Welcome to the captivating world of 'FastRide: NYC Taxi Trip Duration Prediction'! Step into the realm of New York City's bustling streets as we unravel the mysteries behind taxi rides. 
+
+The dataset utilized is sourced from the NYC Taxi Trip Duration competition on Kaggle. It focuses exclusively on the training dataset throughout the project. This training dataset consists of 1,458,644 records, encompassing data from January to June of 2016.
+
+Model evaluation is performed using Cross-Validation, incorporating TimeSeriesSplits. The Cross-Validation process utilizes data from January to May for training and validating the model, while the data from June is exclusively reserved for testing the final model. For more information on dataset, please refer <a href="datasetinfo.txt">datasetinfo.txt</a>.
+
+To gain a deeper understanding of the dataset, a comprehensive analysis has been conducted and is presented within the <a href="src/notebooks/data_analysis_and_processing.ipynb'">data_analysis_and_processing.ipynb</a> file. The notebook provides a thorough exploration of our dataset, presenting detailed visualizations, statistical analysis, and insightful observations. Within the file, dataset is examined for features, identifying correlations, trends, and potential outliers. 
+
+The <a href="src/features/feature_pipeline.py'">feature_pipeline.py</a> script plays a crucial role in the data processing and engineering pipeline for the taxi ride data. It ensures that the relevant features are extracted, combined into an engineered feature matrix, and ultimately stored within the Hopsworks Feature Store, enabling efficient data management and subsequent analysis.
+
 This project includes two Streamlit applications:
 
 *  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration.

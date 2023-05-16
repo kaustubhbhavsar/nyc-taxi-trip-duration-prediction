@@ -57,7 +57,7 @@ def generate_trip_data() -> Tuple[int, int, float, float, float, float, float]:
     """
     # generate 'vendor_id' with more weightage given to 'vendor_id=2'
     # higher weightage is as per the observations from EDA that 'vendor_id=2' has most number of records
-    vendor_id = random.choices([1, 2], weights=[1, 3], k=1)[0]
+    vendor_id = random.randint(1, 2)
 
     # generate 'passenger_count' with equal probability
     passenger_count = random.randint(1, 6)
