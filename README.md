@@ -11,6 +11,12 @@
 <!-- ABOUT PROJECT -->
 ## What Is It?
 
+<div align="center">
+Welcome to the captivating world of 'FastRide: NYC Taxi Trip Duration Prediction'! 
+  
+Step into the realm of New York City's bustling streets as we unravel the mysteries behind taxi rides. 
+</div>
+
 The purpose of the NYC Taxi Trip Duration Prediction work is to develop a machine learning model that accurately predicts the duration of taxi trips in New York City. This work can help businesses operating in the transportation industry to better manage their resources, optimize their operations, and improve customer satisfaction.
 
 By accurately predicting the duration of taxi trips, businesses can better schedule their vehicles and drivers, ensuring that they are dispatched to the right locations at the right times. This can help to minimize wait times for passengers and reduce the likelihood of missed appointments or deadlines.
@@ -27,7 +33,13 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 <!-- PROJECT SUMMARY -->
 ## Summary
 
-Welcome to the captivating world of 'FastRide: NYC Taxi Trip Duration Prediction'! Step into the realm of New York City's bustling streets as we unravel the mysteries behind taxi rides. 
+<p align="center">
+  <img src="https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/architecture.png">
+</p>
+
+<p align="center">
+  fig. FastRide Architecture
+</p>
 
 The dataset utilized is sourced from the NYC Taxi Trip Duration competition on Kaggle. It focuses exclusively on the training dataset throughout the project. This training dataset consists of 1,458,644 records, encompassing data from January to June of 2016.
 
