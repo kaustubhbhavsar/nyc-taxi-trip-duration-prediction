@@ -37,16 +37,25 @@ To gain a deeper understanding of the dataset, a comprehensive analysis has been
 
 The <a href="src/features/feature_pipeline.py">feature_pipeline.py</a> script is utilized in the data processing and engineering pipeline for the taxi ride data. It ensures that the relevant features are extracted, combined into an engineered feature matrix, and ultimately stored within the Hopsworks Feature Store, enabling efficient data management and subsequent analysis.
 
-This project includes two Streamlit applications:
+The <a href="src/training/training_part_1.ipynb">training_part_1.ipynb</a> notebook establishes a performance baseline that serves as a benchmark to evaluate the performance of more advanced models such as Linear Regression and HistGradient Boosting. Additionally, the notebook conducts a qualitative analysis to gain deeper insights into the models' performance on the dataset.
+
+Furthermore, <a href="src/training/training_part_2_(pipeline).ipynb">training_part_2_(pipeline).ipynb</a> notebook aims to utilize the preprocessing steps outlined in the preceding notebook in order to build a model using XGBoost. It also incorporates the utilization of weights and biases sweeps. Through this process, the best-performing run's parameters are identified and used to train the final model.
+
+The two Streamlit applications included are:
 
 *  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration.
-*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights.
+*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights (utilizes Alibi Detect framework).
 
-You can view two recorded screen GIFs demonstrating the functionality of the Streamlit apps below. The first GIF demonstrates the prediction app, highlighting the map-based selection, prediction results, and data storage to the feature store. The second GIF showcases the user interface and features of the monitoring app, including real-time drift calculation and insights. Users can monitor and analyze the performance of the prediction model and make informed decisions based on the displayed information.
+You can view two recorded screen GIFs demonstrating the functionality of the Streamlit apps below. The GIF on the left demonstrates the prediction app, highlighting the map-based selection, prediction results, and data storage to the feature store. Other GIF on the right showcases the user interface and features of the monitoring app, including real-time drift calculation and insights. Users can monitor and analyze the performance of the prediction model and make informed decisions based on the displayed information.
 
 PREDICTION             |  MONITORING
 :-------------------------:|:-------------------------:
 ![Prediction Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_prediction.gif) | ![Monitoring Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_monitoring.gif)
+
+### Code and Data Testing
+
+*  The project incorporates <a href="tests/great_expectations/">data testing</a> using the Great Expectations library. 
+*  The <a href="tests/code/src/">code testing</a> phase of the project involves the utilization of the Pytest framework.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -96,6 +105,8 @@ Ensure that all the necessary dependencies and libraries are installed. Refer to
 Please note that certain files within this project necessitate the usage of Hopsworks. Additionally, an API key for Weights & Biases is required. To proceed with experimentation on a local setup, kindly create an API key and provide it either as a string or through files.
 
 As noted above, this project includes two Streamlit applications (<a href="src/inference/app.py">app.py</a> and <a href="src/monitoring/monitoring.py">monitoring.py</a>), that may experience latency, typically up to a minute or two, particularly when accessing datasets from Hopsworks. To optimize the performance consider sampling a subset of the data or aggregating it to a manageable size while still maintaining its representative nature.
+
+While random generation of production data (<a href="src/inference/automated_data_generation.py">automated_data_generation.py</a>) is carried out according to a predetermined schedule, it is important to note that this approach does not accurately simulate real-life traffic patterns. Therefore, it should not be employed as a benchmark for comparing against real-life models.
 
 The codebase has been meticulously documented, incorporating comprehensive docstrings and comments. Please review these annotations, as they provide valuable insights into the functionality and operation of the code. 
 
