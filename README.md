@@ -23,7 +23,7 @@ By accurately predicting the duration of taxi trips, businesses can better sched
 
 Furthermore, the work can enable businesses to provide more accurate fare estimates to their customers, which can help to improve customer satisfaction and loyalty. Customers who receive reliable and transparent fare estimates are more likely to trust and continue to use a particular transportation service.
 
-The analysis of a large dataset of NYC taxi trips, which includes information such as pick-up and drop-off locations, pickup time, and other relevant factors, is utilized to develop a machine learning model. The resulting model is then used to predict the duration of taxi trips for new data points.
+The analysis of a large dataset of NYC taxi trips, which includes information such as pick-up and drop-off locations, pickup time, and other relevant factors, is utilized to develop a machine learning model. The resulting model is then used to predict the duration of taxi trips for new data points. The entire system employs a serverless architecture.
 
 Overall, the work aims to provide a valuable tool for businesses in the transportation industry to improve their operations, enhance customer satisfaction, and ultimately increase their profitability.
 
@@ -38,7 +38,7 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 </p>
 
 <p align="center">
-  fig. FastRide Architecture
+  fig. FastRide Serverless Architecture
 </p>
 
 The dataset utilized is sourced from the NYC Taxi Trip Duration competition on Kaggle. It focuses exclusively on the training dataset throughout the project. This training dataset consists of 1,458,644 records, encompassing data from January to June of 2016.
