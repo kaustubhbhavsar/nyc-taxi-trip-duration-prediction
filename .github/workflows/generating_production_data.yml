@@ -25,4 +25,4 @@ jobs:
       - name: Run Python script
         run: |
           API_KEY=${{ secrets.HOPSWORKS_API_KEY }}
-          python src/inference/automated_data_generation.py --api-key $API_KEY
+          python ./src/inference/automated_data_generation.py --api-key $API_KEY
