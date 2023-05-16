@@ -13,6 +13,7 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
+import argparse
 import pandas as pd
 import random
 from src.utils import app_utils, hopsworks_utils
@@ -115,8 +116,12 @@ def run(
         pickup_datetime
     )
 
-    # login to hopsworks pass the project as arguement
-    project = hopsworks_utils.login_to_hopsworks(project="nyc_taxi_trip_duration")
+    # parse command-line arguments to get hopsworks api key
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--api-key', help='Hopsworks API key')
+    args = parser.parse_args()
+    # login to hopsworks pass the project and api key as arguements
+    project = hopsworks_utils.login_to_hopsworks(project="nyc_taxi_trip_duration",  api_key=args.api_key)
     
     # get model
     model = app_utils.get_model(project=project, model_name="final_xgboost", version=1)

@@ -141,7 +141,7 @@ try:
         df_loaded = pd.read_csv(Path(config.CONFIG_DIR, "selected_features.txt"), sep='\t')
         
         # login to hopsworks pass the project as arguement
-        project = hopsworks_utils.login_to_hopsworks(project="nyc_taxi_trip_duration", streamlit_api_key=st.secrets["HOPSWORKS_API_KEY"])
+        project = hopsworks_utils.login_to_hopsworks(project="nyc_taxi_trip_duration", api_key=st.secrets["HOPSWORKS_API_KEY"])
         # get model
         st.write("<p style='text-align: center;'>(getting model)</p>", unsafe_allow_html=True)
         model = app_utils.get_model(project=project, model_name="final_xgboost", version=1)
