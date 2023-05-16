@@ -2,7 +2,10 @@
 
 <br />
 <div align="center">
-  <h3 align="center">NYC Taxi Trip Duration</h3>
+  <h3 align="center">FastRide: NYC Taxi Trip Duration Prediction</h3>
+  <p align="center">
+      <b>Weights&amp;Biases</b> Experiment Tracking | <b>Hopsworks</b> Feature Store | <b>Alibi-Detect</b> Monitoring | <b>Streamlit</b> Web-App 
+  </p>
 </div>
 
 <!-- ABOUT PROJECT -->
@@ -24,6 +27,16 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 <!-- PROJECT SUMMARY -->
 ## Summary
 
+This project includes two Streamlit applications:
+
+*  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration.
+*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights.
+
+You can view two recorded screen GIFs demonstrating the functionality of the Streamlit apps below. The first GIF demonstrates the prediction app, highlighting the map-based selection, prediction results, and data storage to the feature store. The second GIF showcases the user interface and features of the monitoring app, including real-time drift calculation and insights. Users can monitor and analyze the performance of the prediction model and make informed decisions based on the displayed information.
+
+PREDICTION             |  MONITORING
+:-------------------------:|:-------------------------:
+![Prediction Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_prediction.gif) | ![Monitoring Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_monitoring.gif)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -61,7 +74,7 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 *   Web App: Streamlit, Folium
 *   Other Prominent Libraries: Scikit-Learn, Xgboost, Pandas, Numpy, Matplotlib, Seaborn, Yellowbrick
 
-The additional libraries utilized, along with the precise versions of each library used, are specified in the requirements.txt file.
+The additional libraries utilized, along with the precise versions of each library used, are specified in the <a href="requirements.txt">requirements.txt</a> file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -72,12 +85,7 @@ Ensure that all the necessary dependencies and libraries are installed. Refer to
 
 Please note that certain files within this project necessitate the usage of Hopsworks. Additionally, an API key for Weights & Biases is required. To proceed with experimentation on a local setup, kindly create an API key and provide it either as a string or through files.
 
-This project includes two Streamlit applications:
-
-*  <a href="src/inference/app.py">app.py</a>: This application is designed for making predictions.
-*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: This application is intended for monitoring purposes.
-
-The files mentioned above may experience latency, typically up to a minute or two, particularly when accessing datasets from Hopsworks. To optimize the performance consider sampling a subset of the data or aggregating it to a manageable size while still maintaining its representative nature.
+As noted above, this project includes two Streamlit applications (<a href="src/inference/app.py">app.py</a> and <a href="src/monitoring/monitoring.py">monitoring.py</a>), that may experience latency, typically up to a minute or two, particularly when accessing datasets from Hopsworks. To optimize the performance consider sampling a subset of the data or aggregating it to a manageable size while still maintaining its representative nature.
 
 The codebase has been meticulously documented, incorporating comprehensive docstrings and comments. Please review these annotations, as they provide valuable insights into the functionality and operation of the code. 
 
