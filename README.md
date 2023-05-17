@@ -112,7 +112,7 @@ The additional libraries utilized, along with the precise versions of each libra
 <!-- Final Notes -->
 ## Final Notes
 
-Ensure that all the necessary dependencies and libraries are installed. Refer to the <a href="requirements.txt">requirements.txt</a> file for a complete list of required libraries and their versions.
+Ensure that all the necessary dependencies and libraries are installed. Refer to the <a href="requirements.txt">requirements.txt</a> file for a complete list of required libraries and their versions. The codebase relies on Python version 3.7.16.
 
 Please note that certain files within this project necessitate the usage of Hopsworks that required an API key for access. Additionally, an API key for Weights & Biases is required. To proceed with experimentation on a local setup, kindly create an API key and provide it either as a string or through a file.
 
