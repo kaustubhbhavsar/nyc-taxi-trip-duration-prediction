@@ -34,7 +34,7 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 ## Summary
 
 <p align="center">
-  <img src="https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/architecture.png">
+  <img src="https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/architecture.svg">
 </p>
 
 <p align="center">
@@ -53,10 +53,10 @@ The <a href="src/training/training_part_1.ipynb">training_part_1.ipynb</a> noteb
 
 Furthermore, <a href="src/training/training_part_2_(pipeline).ipynb">training_part_2_(pipeline).ipynb</a> notebook aims to utilize the preprocessing steps outlined in the preceding notebook in order to build a model using XGBoost. It also incorporates the utilization of weights and biases sweeps. Through this process, the best-performing run's parameters are identified and used to train the final model.
 
-The two Streamlit applications included are:
+The two Streamlit applications included are (links to public apps given):
 
-*  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration.
-*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights (utilizes Alibi Detect framework).
+*  <a href="src/inference/app.py">app.py</a>: Map-based selection, prediction results, and feature store integration. [<a href="https://kaustubhbhavsar-nyc-taxi-trip-duration-srcinferenceapp-apx1ch.streamlit.app/">link to streamlit prediction app</a>]
+*  <a href="src/monitoring/monitoring.py">monitoring.py</a>: Real-time drift calculation and insights (utilizes Alibi Detect framework). [<a href="https://kaustubhbhavsar-nyc-taxi-trip-du-srcmonitoringmonitoring-u0onkv.streamlit.app/">link to streamlit monitoring app</a>]
 
 You can view two recorded screen GIFs demonstrating the functionality of the Streamlit apps below. The GIF on the left demonstrates the prediction app, highlighting the map-based selection, prediction results, and data storage to the feature store. Other GIF on the right showcases the user interface and features of the monitoring app, including real-time drift calculation and insights. Users can monitor and analyze the performance of the prediction model and make informed decisions based on the displayed information.
 
