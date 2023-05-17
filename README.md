@@ -41,7 +41,7 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
   fig. FastRide Serverless Architecture
 </p>
 
-The dataset utilized is sourced from the NYC Taxi Trip Duration competition on Kaggle. It focuses exclusively on the training dataset throughout the project. This training dataset consists of 1,458,644 records, encompassing data from January to June of 2016.
+The dataset utilized is sourced from the NYC Taxi Trip Duration competition on Kaggle. It focuses exclusively on the training dataset throughout the project. This training dataset consists of 1,458,644 records, encompassing data from January to June of 2016. The Original dataset is not provided here due to its large size. It can be downloaded from <a href="https://www.kaggle.com/competitions/nyc-taxi-trip-duration/data">here</a>.
 
 Model evaluation is performed using Cross-Validation, incorporating TimeSeriesSplits. The Cross-Validation process utilizes data from January to May for training and validating the model, while the data from June is exclusively reserved for testing the final model. For more information on dataset, please refer <a href="datasetinfo.txt">datasetinfo.txt</a>.
 
