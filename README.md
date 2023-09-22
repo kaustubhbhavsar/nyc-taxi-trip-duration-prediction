@@ -34,7 +34,7 @@ Overall, the work aims to provide a valuable tool for businesses in the transpor
 ## Summary
 
 <p align="center">
-  <img src="https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/architecture.svg">
+  <img src="https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration-prediction/blob/main/assets/architecture.svg">
 </p>
 
 <p align="center">
@@ -62,7 +62,7 @@ You can view two recorded screen GIFs demonstrating the functionality of the Str
 
 PREDICTION             |  MONITORING
 :-------------------------:|:-------------------------:
-![Prediction Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_prediction.gif) | ![Monitoring Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration/blob/main/assets/webapp_monitoring.gif)
+![Prediction Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration-prediction/blob/main/assets/webapp_prediction.gif) | ![Monitoring Demo](https://github.com/kaustubhbhavsar/nyc-taxi-trip-duration-prediction/blob/main/assets/webapp_monitoring.gif)
 
 ### Code and Data Testing
 
